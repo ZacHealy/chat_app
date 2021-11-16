@@ -1,8 +1,10 @@
 import classes from "./useritem.module.css"
+import { Link } from "react-router-dom";
 
 function UserItem(props) {
+  console.log(props.id);
   return (
-    <div className={classes.container}>
+    <Link className={classes.container} to='/chatview' state={props.id}>
       <div className={classes.image}>
         <img className={classes.image} src={props.avatar} alt={props.firstName} />
       </div>
@@ -10,7 +12,7 @@ function UserItem(props) {
         <div className={classes.firstName}>{props.firstName}</div>
         <div className={classes.lastName}>{props.lastName}</div>
       </div>
-    </div>
+    </Link>
   );
 }
 

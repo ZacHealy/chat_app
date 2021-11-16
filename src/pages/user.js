@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import UserList from "../users/userlist";
-import classes from "./user.module.css"
+import classes from "./user.module.css";
 
 function UserView() {
   const [isLoading, setIsLoading] = useState(true);
@@ -23,14 +23,12 @@ function UserView() {
   if (isLoading) {
     return <p>Loading...</p>;
   }
-  
-  if (loadedUsers !== []) {
-    return (
-      <div className={classes.container}>
-        <UserList users={loadedUsers} />
-      </div>
-    );
-  }
+
+  return (
+    <div className={classes.container}>
+      <UserList users={loadedUsers} />
+    </div>
+  );
 }
 
 export default UserView;

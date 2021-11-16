@@ -7,10 +7,11 @@ function UserList(props) {
     <div className={classes.item}>
       {props.users.map((user) => (
         <UserItem
-          key={user.firstName}
+          key={user.id}
           avatar={user.avatar}
           firstName={user.firstName}
           lastName={user.lastName}
+          id={user.id}
         />
       ))}
     </div>
