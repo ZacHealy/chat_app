@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  margin: 20px;
+}
+
+.image {
+  border-radius: 50%;
+}
+
+.textContainer {
+  margin: 2rem;
+}
+
+.firstName {
+  text-align: left;
+  text-size-adjust: 150%;
+  font-family: "Open-sans", sans-serif;
+  font-size: 200%;
+}
+
+.lastName {
+  text-align: left;
+  font-family: "Open-sans", sans-serif;
+}

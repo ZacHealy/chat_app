@@ -1,0 +1,15 @@
+.item {
+    padding: 80px 100px;
+}
+
+.image {
+    border-radius: 50%;
+}
+
+.firstName {
+    font-size: large;
+}
+
+.lastName {
+    font-size: small;
+}
