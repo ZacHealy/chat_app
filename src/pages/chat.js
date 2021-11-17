@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import ChatList from "../chat/chatlist";
+import NewMessage from "../messages/submitHandler";
+import OrderArray from "../messages/arrayorder";
 
 import classes from "./chat.module.css";
 
@@ -10,6 +12,7 @@ function ChatView(props) {
   const [loadedMessages, setLoadedMessages] = useState([]);
   const location = useLocation();
   const id = location.state;
+  const [state, stateAddOne] = useState(0);
 
   useEffect(() => {
     setIsLoading(true);
@@ -19,7 +22,8 @@ function ChatView(props) {
       })
       .then((data) => {
         const messages = data;
-        setLoadedMessages(messages);
+        const orderedMessages = OrderArray(messages);
+        setLoadedMessages(orderedMessages);
         setIsLoading(false);
       });
   }, []);
@@ -28,9 +32,22 @@ function ChatView(props) {
     return <p>Loading...</p>;
   }
 
+  function UpdateMessageArray(props) {
+    setLoadedMessages(props);
+    stateAddOne(state + 1);
+    document.getElementById("messageinput").reset();
+  }
+
   return (
-    <div className={classes.container}>
-      <ChatList messages={loadedMessages} id={id}/>
+    <div className={classes.overcontainer}>
+      <div className={classes.container}>
+        <ChatList messages={loadedMessages} id={id} />
+      </div>
+      <NewMessage
+        messages={loadedMessages}
+        id={id}
+        updateMessages={UpdateMessageArray}
+      />
     </div>
   );
 }

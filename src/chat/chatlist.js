@@ -1,14 +1,13 @@
 import ChatItem from "./chatitem";
+import classes from "./chatlist.module.css"
 
 function ChatList(props) {
-    console.log(props.id);
   return (
-    <div>
+    <div className={classes.scrollingSection}>
       {props.messages.map((message) => (
         <ChatItem
           key={message.id}
           message={message.message}
-          createdat={message.createdAt}
           id={message.userID}
           userId={props.id}
         />
