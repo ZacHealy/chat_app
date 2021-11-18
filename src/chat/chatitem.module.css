@@ -2,9 +2,12 @@
     display: flex;
     width: 50%;
     align-items: left;
-    background-color: gray;
+    background-color: lightgray;
     padding: 5px;
     border: 5px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
 }
 
 .chatbubbleright {
@@ -12,7 +15,15 @@
     width: 50%;
     margin-left: auto;
     margin-right: 0%;
-    background-color: lightblue;
+    background-color: rgb(213, 228, 255);
     padding: 5px;
     border: 5px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.container {
+    padding-top: 15px;
+    padding-left: 15px;
 }

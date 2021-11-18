@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import ChatList from "../chat/chatlist";
 import NewMessage from "../messages/submitHandler";
 import OrderArray from "../messages/arrayorder";
@@ -48,6 +49,7 @@ function ChatView(props) {
         id={id}
         updateMessages={UpdateMessageArray}
       />
+      <Link className={classes.link} to="/">Back</Link>
     </div>
   );
 }
