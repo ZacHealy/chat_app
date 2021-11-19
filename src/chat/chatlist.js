@@ -10,6 +10,7 @@ function ChatList(props) {
           message={message.message}
           id={message.userID}
           userId={props.id}
+          msgID={message.id}
         />
       ))}
     </div>

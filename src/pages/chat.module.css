@@ -52,6 +52,7 @@
   padding: auto;
   width: 90%;
   font-family: "Open-sans", sans-serif;
+  max-height: 3rem;
 }
 
 .message:focus {

@@ -1,16 +1,14 @@
 .chatbubbleleft {
-    display: flex;
-    width: 50%;
-    align-items: left;
-    background-color: lightgray;
-    padding: 5px;
-    border: 5px;
-    border-bottom-right-radius: 10px;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
+    max-height: 56px;
+    overflow: hidden;
 }
 
 .chatbubbleright {
+    max-height: 56px;
+    overflow: hidden;
+}
+
+.msgandshowmoreright {
     display: flex;
     width: 50%;
     margin-left: auto;
@@ -23,7 +21,29 @@
     border-top-left-radius: 10px;
 }
 
+.msgandshowmoreleft {
+    display: flex;
+    width: 50%;
+    margin-left: 0%;
+    margin-right: auto;
+    background-color: lightgray;
+    padding: 5px;
+    border: 5px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
 .container {
     padding-top: 15px;
     padding-left: 15px;
+}
+
+.link {
+    text-decoration: underline;
+    color: black;
+}
+
+.link:hover {
+    cursor: pointer;
 }
