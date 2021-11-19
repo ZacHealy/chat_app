@@ -14,20 +14,25 @@ function ChatItem(props) {
   }, []);
 
   const onClickMore = () => {
-    setShowMore(!showMore);
+    setShowMore(true);
     document.getElementById(props.msgID).style.maxHeight = "none";
+  };
+
+  const onClickLess = () => {
+    setShowMore(false);
+    document.getElementById(props.msgID).style.maxHeight = "56px";
   };
 
   if (props.id == props.userId) {
     return (
       <div ref={ref} className={classes.container}>
         <div className={classes.msgandshowmoreright}>
-          <div id={props.msgID} className={classes.chatbubbleright}>
+          <div id={props.msgID} className={classes.chatbubbleright} onClick={onClickLess}>
             {props.message}
           </div>
           {showLink && (
             <div className={classes.link} onClick={onClickMore}>
-              {showMore ? "" : "show more"}
+              {showMore ? "" : "Read more"}
             </div>
           )}
         </div>
@@ -37,12 +42,12 @@ function ChatItem(props) {
     return (
       <div ref={ref} className={classes.container}>
         <div className={classes.msgandshowmoreleft}>
-          <div id={props.msgID} className={classes.chatbubbleleft}>
+          <div id={props.msgID} className={classes.chatbubbleleft} onClick={onClickLess}>
             {props.message}
           </div>
           {showLink && (
             <div className={classes.link} onClick={onClickMore}>
-              {showMore ? "" : "show more"}
+              {showMore ? "" : "Read more"}
             </div>
           )}
         </div>

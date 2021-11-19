@@ -1,15 +1,16 @@
 .chatbubbleleft {
     max-height: 56px;
     overflow: hidden;
+    cursor: default;
 }
 
 .chatbubbleright {
     max-height: 56px;
     overflow: hidden;
+    cursor: default;
 }
 
 .msgandshowmoreright {
-    display: flex;
     width: 50%;
     margin-left: auto;
     margin-right: 0%;
@@ -22,7 +23,6 @@
 }
 
 .msgandshowmoreleft {
-    display: flex;
     width: 50%;
     margin-left: 0%;
     margin-right: auto;
@@ -40,8 +40,8 @@
 }
 
 .link {
-    text-decoration: underline;
-    color: black;
+    color: rgb(59, 59, 59);
+    font-family: "Open-sans", sans-serif;
 }
 
 .link:hover {
