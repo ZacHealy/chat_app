@@ -8,8 +8,9 @@ function ChatItem(props) {
   const [showLink, setShowLink] = React.useState(false);
 
   React.useLayoutEffect(() => {
-    if (ref.current.clientHeight > 80) {
+    if (ref.current.clientHeight < ref.current.scrollHeight) {
       setShowLink(true);
+      document.getElementById(props.msgID).style.overflow = "hidden";
     }
   }, []);
 
@@ -20,14 +21,18 @@ function ChatItem(props) {
 
   const onClickLess = () => {
     setShowMore(false);
-    document.getElementById(props.msgID).style.maxHeight = "56px";
+    document.getElementById(props.msgID).style.maxHeight = "3.5rem";
   };
 
   if (props.id == props.userId) {
     return (
       <div ref={ref} className={classes.container}>
         <div className={classes.msgandshowmoreright}>
-          <div id={props.msgID} className={classes.chatbubbleright} onClick={onClickLess}>
+          <div
+            id={props.msgID}
+            className={classes.chatbubbleright}
+            onClick={onClickLess}
+          >
             {props.message}
           </div>
           {showLink && (
@@ -42,7 +47,11 @@ function ChatItem(props) {
     return (
       <div ref={ref} className={classes.container}>
         <div className={classes.msgandshowmoreleft}>
-          <div id={props.msgID} className={classes.chatbubbleleft} onClick={onClickLess}>
+          <div
+            id={props.msgID}
+            className={classes.chatbubbleleft}
+            onClick={onClickLess}
+          >
             {props.message}
           </div>
           {showLink && (

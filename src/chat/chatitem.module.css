@@ -1,12 +1,10 @@
 .chatbubbleleft {
-    max-height: 56px;
-    overflow: hidden;
+    max-height: 3.5rem;
     cursor: default;
 }
 
 .chatbubbleright {
-    max-height: 56px;
-    overflow: hidden;
+    max-height: 3.5rem;
     cursor: default;
 }
 
