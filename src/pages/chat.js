@@ -40,6 +40,7 @@ function ChatView(props) {
 
   function UpdateMessageArray(props) {
     setLoadedMessages(props);
+    console.log(loadedMessages)
     stateAddOne(state + 1);
     document.getElementById("messageinput").reset();
   }

@@ -21,7 +21,7 @@ function ChatItem(props) {
 
   const onClickLess = () => {
     setShowMore(false);
-    document.getElementById(props.msgID).style.maxHeight = "3.5rem";
+    document.getElementById(props.msgID).style.maxHeight = "3rem";
   };
 
   if (props.id == props.userId) {

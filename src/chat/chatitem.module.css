@@ -1,11 +1,13 @@
 .chatbubbleleft {
-    max-height: 3.5rem;
+    max-height: 3rem;
     cursor: default;
+    line-height: 1rem;
 }
 
 .chatbubbleright {
-    max-height: 3.5rem;
+    max-height: 3rem;
     cursor: default;
+    line-height: 1rem;
 }
 
 .msgandshowmoreright {
