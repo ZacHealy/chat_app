@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import UserList from "../users/userlist";
 import classes from "./user.module.css";
+import Loader from "react-loader-spinner";
 
 function UserView() {
   const [isLoading, setIsLoading] = useState(true);
@@ -21,7 +22,11 @@ function UserView() {
   }, []);
 
   if (isLoading) {
-    return <p>Loading...</p>;
+    return (
+      <div className={classes.loadcontainer}>
+        <Loader type="TailSpin" color="#00BFFF" height={80} width={80} />
+      </div>
+    );
   }
 
   return (

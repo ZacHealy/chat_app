@@ -1,3 +1,6 @@
-.container {
-
+.loadcontainer {
+  position: relative;
+  top: 50%;
+  margin-left: 50%;
+  transform: translate(-40px, -50%);
 }

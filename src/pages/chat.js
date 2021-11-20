@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import ChatList from "../chat/chatlist";
 import NewMessage from "../messages/submitHandler";
 import OrderArray from "../messages/arrayorder";
+import Loader from "react-loader-spinner";
 
 import classes from "./chat.module.css";
 
@@ -30,7 +31,11 @@ function ChatView(props) {
   }, []);
 
   if (isLoading) {
-    return <p>Loading...</p>;
+    return (
+      <div className={classes.loadcontainer}>
+        <Loader type="TailSpin" color="#00BFFF" height={80} width={80} />
+      </div>
+    );
   }
 
   function UpdateMessageArray(props) {
@@ -49,7 +54,9 @@ function ChatView(props) {
         id={id}
         updateMessages={UpdateMessageArray}
       />
-      <Link className={classes.link} to="/">Back</Link>
+      <Link className={classes.link} to="/">
+        Back
+      </Link>
     </div>
   );
 }
