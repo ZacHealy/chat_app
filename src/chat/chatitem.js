@@ -40,7 +40,6 @@ function ChatItem(props) {
     setShowMore(false);
     setEditMessage(false);
     document.getElementById(msgID).style.maxHeight = "3.9rem";
-    document.getElementById(msgID).style.overflow = "visible";
     const editedMessage = {
       id: msgID,
       userID: userID,
