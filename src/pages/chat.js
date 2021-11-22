@@ -40,15 +40,22 @@ function ChatView(props) {
 
   function UpdateMessageArray(props) {
     setLoadedMessages(props);
-    console.log(loadedMessages)
     stateAddOne(state + 1);
     document.getElementById("messageinput").reset();
+  }
+
+  function UpdateWithEditedMessage (props) {
+    const index = loadedMessages.findIndex((obj=>obj.id == props.id))
+    const messages = loadedMessages;
+    messages[index] = props;
+    setLoadedMessages(messages);
+    stateAddOne(state + 1);
   }
 
   return (
     <div className={classes.overcontainer}>
       <div className={classes.container}>
-        <ChatList messages={loadedMessages} id={id} />
+        <ChatList messages={loadedMessages} id={id} submit={UpdateWithEditedMessage}/>
       </div>
       <NewMessage
         messages={loadedMessages}
